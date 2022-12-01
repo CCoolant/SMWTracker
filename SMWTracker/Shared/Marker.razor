@@ -1,0 +1,30 @@
+﻿<img src=@image style="position:fixed;left:@PositionX;top:@PositionY;" @onclick="CheckClick"/>
+
+@code {
+    [Parameter]
+    public string PositionX { get; set; }
+    [Parameter]
+    public string PositionY { get; set; }
+
+    public int state = 0;
+    public string image = "images/red.png";
+
+    private void CheckClick()
+    {
+        if(state == 0)
+        {
+            image = "images/green.png";
+            state++;
+        }
+        else if(state == 1)
+        {
+            image = "images/greencoin.png";
+            state++;
+        }
+        else if(state == 2)
+        {
+            image = "images/red.png";
+            state = 0;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+﻿@inherits Marker;
+
+<img src=@image style="position:fixed;left:@PositionX;top:@PositionY;" @onclick="CheckClick" />
+
+@code {
+        private void CheckClick()
+        {
+            if (state == 0)
+            {
+                image = "images/yellow.png";
+                state++;
+            }
+            else if(state == 1)
+            {
+                image = "images/yellowcoin.png";
+                state++;
+            }
+            else if (state == 2)
+            {
+                image = "images/green.png";
+                state++;
+            }
+            else if (state == 3)
+            {
+                image = "images/greencoin.png";
+                state++;
+            }
+            else if (state == 4)
+            {
+                image = "images/red.png";
+                state = 0;
+            }
+        }
+}
